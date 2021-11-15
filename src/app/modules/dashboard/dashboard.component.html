@@ -1,0 +1,40 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    <div fxFlex="100" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+          <ng-container *ngFor="let colName of displayedColumns;" matColumnDef="{{colName}}">
+            <th mat-header-cell *matHeaderCellDef> {{colName}} </th>
+            <td mat-cell *matCellDef="let element"> {{element[colName]}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+        <mat-paginator #matPaginator [pageSizeOptions]="[10, 25, dataSource.data.length]"
+            showFirstLastButtons 
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+</div>
+
+<br>
+
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
+      <mat-card fxFlex="50" class="mat-elevation-z8">
+          <app-starplot></app-starplot>
+          <!-- <app-widget-pie [data]="pieChart"></app-widget-pie> -->
+      </mat-card>
+
+      <mat-card fxFlex="50" class="mat-elevation-z8">
+        <app-scaterplot></app-scaterplot>
+      </mat-card>
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
