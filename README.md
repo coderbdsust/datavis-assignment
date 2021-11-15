@@ -46,8 +46,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 We use `@Git` for versioning.
 
-## Technology
+## Editor
 
+* [VS Code](https://code.visualstudio.com/ "VSCode Home Page")
+
+## Technology
 * [NodeJS](https://nodejs.org/en/ "NodeJS Home Page")
 * [D3](https://d3js.org/ "D3 Home Page")
 * [Angular ](https://angular.io/ "Angular Home Page")
