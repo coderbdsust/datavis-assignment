@@ -3,10 +3,10 @@
 ## Features Summary with UI
 
 * Landing Page
-![Landing Page](https://github.com/coderbdsust/pos/blob/master/demo-img/landing-page.png)
+![Landing Page](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/landing-page.png)
 
 * About Us
-![About Us](https://github.com/coderbdsust/pos/blob/master/demo-img/aboutus.png)
+![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus.png)
 
 ## CLI
 
