@@ -7,7 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule, MatButtonModule,MatIconModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
-import { Assignment2Component } from 'src/app/modules/assignment2/assignment2.component';
+import { Assignment3Component } from 'src/app/modules/assignment3/assignment3.component';
 import { AboutusComponent } from 'src/app/modules/aboutus/aboutus.component';
 import {DataTablesModule} from 'angular-datatables';
 
@@ -15,7 +15,7 @@ import {DataTablesModule} from 'angular-datatables';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    Assignment2Component,
+    Assignment3Component,
     AboutusComponent,
   ],
   imports: [
