@@ -12,9 +12,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
+## Install
+
+Install `NodeJS` software in your local machine, set the path variable for accessing `npm` command if required.
+
+Goto the project folder, Run in the terminal `npm install` for installing `node_modules` - necessary packages for the project.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` or `ng serve`  for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -36,6 +42,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Versioning
+
+We use `@Git` for versioning.
 
 ## Technology
 
@@ -43,6 +52,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * [D3](https://d3js.org/ "D3 Home Page")
 * [Angular ](https://angular.io/ "Angular Home Page")
 * [Angular Material](https://material.angular.io/ "Angular Material Home Page")
+* [Git-SCM](https://git-scm.com/ "Git Home Page")
 
 ## Developers
 
