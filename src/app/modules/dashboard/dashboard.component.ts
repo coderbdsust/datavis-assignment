@@ -9,15 +9,10 @@ import { MatTableDataSource, MatPaginator , MatSort} from '@angular/material';
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
 
-  bigChart = [];
-  cards = [];
-  pieChart = [];
-
-
   displayedColumns=[];
   carsJsonArray=[];
   dataSource: any;
-  
+
   @ViewChild('matPaginator', { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
@@ -34,11 +29,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
+  
   ngOnInit() {
-    this.bigChart = this.dashboardService.bigChart();
-    this.cards = this.dashboardService.cards();
-    this.pieChart = this.dashboardService.pieChart();
   }
 
 }

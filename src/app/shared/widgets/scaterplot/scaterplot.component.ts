@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as d3 from "d3";
 import { DashboardService } from 'src/app/modules/dashboard.service';
+import { Underscore } from 'underscore';
+
+declare var _: Underscore<any>;
 
 @Component({
   selector: 'app-scaterplot',
@@ -9,24 +12,20 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
 })
 export class ScaterplotComponent implements OnInit {
 
-  private data = [
-    {"Framework": "Vue", "Stars": "166443", "Released": "2014"},
-    {"Framework": "React", "Stars": "150793", "Released": "2013"},
-    {"Framework": "Angular", "Stars": "62342", "Released": "2016"},
-    {"Framework": "Backbone", "Stars": "27647", "Released": "2010"},
-    {"Framework": "Ember", "Stars": "21471", "Released": "2011"},
-  ];
-
   carsJsonArray=[];
+  carJsonColumnNames=[];
   
   private svg;
   private margin = 50;
-  private width = 600 - (this.margin * 2);
-  private height = 400 - (this.margin * 2);
+  private width = 1200 - (this.margin * 2);
+  private height = 600 - (this.margin * 2);
+  private xColName='Retail Price';
+  private yColName='Horsepower(HP)';
 
   constructor(private dashboardService: DashboardService) {
     this.dashboardService.getCSV().then(() => {
-      this.carsJsonArray=this.dashboardService.carsJsonArray;
+      this.carsJsonArray = this.dashboardService.carsJsonArray;
+      this.carJsonColumnNames = this.carJsonColumnNames;
     })
    }
 
@@ -46,9 +45,18 @@ export class ScaterplotComponent implements OnInit {
 
 
   private drawPlot(): void {
-    // Add X axis
+    const xMinCar = _.min(this.carsJsonArray, item=>{return item[this.xColName]});
+    const xMaxCar = _.max(this.carsJsonArray, item=>{return item[this.xColName]});
+
+    const yMinCar = _.min(this.carsJsonArray, item=>{return item[this.yColName]});
+    const yMaxCar = _.max(this.carsJsonArray, item=>{return item[this.yColName]});
+  
+    console.log(xMaxCar[this.xColName]+" "+xMinCar[this.xColName]);
+
+    console.log(yMaxCar[this.yColName]+" "+yMinCar[this.yColName]);
+
     const x = d3.scaleLinear()
-    .domain([2009, 2017])
+    .domain([xMinCar[this.xColName], xMaxCar[this.xColName]])
     .range([ 0, this.width ]);
     this.svg.append("g")
     .attr("transform", "translate(0," + this.height + ")")
@@ -56,8 +64,9 @@ export class ScaterplotComponent implements OnInit {
 
     // Add Y axis
     const y = d3.scaleLinear()
-    .domain([0, 200000])
+    .domain([70, 500])
     .range([ this.height, 0]);
+
     this.svg.append("g")
     .call(d3.axisLeft(y));
 
@@ -65,41 +74,34 @@ export class ScaterplotComponent implements OnInit {
     const dots = this.svg.append('g');
 
     dots.selectAll("dot")
-    .data(this.data)
+    .data(this.carsJsonArray)
     .enter()
     .append("circle")
-    .attr("cx", d => x(d.Released))
-    .attr("cy", d => y(d.Stars))
-    .attr("r", 7)
+    .attr("cx", d => x(d[this.xColName]))
+    .attr("cy", d => y(d[this.yColName]))
+    .attr("r", 8)
     .style("opacity", .5)
     .style("fill", "#69b3a2");
 
+    const xLabel = this.svg.append('g');
+
     // Add labels
-    dots.selectAll("text")
-    .data(this.data)
-    .enter()
-    .append("text")
-    .text(d => d.Framework)
-    .attr("x", d => x(d.Released))
-    .attr("y", d => y(d.Stars))
+    xLabel.append("text")             
+    .attr("transform",
+          "translate(" + (this.width/2) + " ," + 
+                         (this.height + this.margin) + ")")
+    .style("text-anchor", "middle")
+    .text(this.xColName +(' (€)'));
 
-    // dots.selectAll("dot")
-    // .data(this.data)
-    // .enter()
-    // .append("circle")
-    // .attr("cx", d => x(d.Released))
-    // .attr("cy", d => y(d.Stars))
-    // .attr("r", 7)
-    // .style("opacity", .5)
-    // .style("fill", "#69b3a2");
+    const yLabel = this.svg.append('g');
 
-    // // Add labels
-    // dots.selectAll("text")
-    // .data(this.data)
-    // .enter()
-    // .append("text")
-    // .text(d => d.Framework)
-    // .attr("x", d => x(d.Released))
-    // .attr("y", d => y(d.Stars))
+    // Add labels
+    yLabel.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - this.margin)
+    .attr("x", 0 - (this.height / 2))
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text(this.yColName);
   }
 }
