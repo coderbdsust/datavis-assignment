@@ -2,8 +2,11 @@
 
 ## Features Summary with UI
 
-* Landing Page
-![Landing Page](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/landing-page.png)
+* Home Page - Multivariate Data
+![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample.png)
+
+* Home Page - Scater Plot
+![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scater-plot.png)
 
 * About Us
 ![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus.png)

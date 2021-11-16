@@ -45,4 +45,39 @@ export class DashboardService{
     return jsonArray;
   }
 
+  public getMax(carArr, colName){
+    let maxValue = -2147483647;
+
+    if(carArr){
+      carArr.forEach(car=>{
+        if(parseInt(car[colName])>maxValue)
+          maxValue=parseInt(car[colName]);
+      })
+    }
+    return maxValue;
+  }
+
+  public getMin(carArr, colName){
+    let minValue = 2147483647;
+    if(carArr){
+      carArr.forEach(car=>{
+        if(parseInt(car[colName])<minValue)
+          minValue=parseInt(car[colName]);
+      })
+    }
+    return minValue;
+  }
+
+  public getGetUniqueColors(carArr){
+      let colors={};
+      carArr.forEach(car => {
+        if(!colors[car['Type']]){
+            colors[car['Type']]= '#'+Math.floor(Math.random()*16777215).toString(16);
+        }
+      })
+      return colors;
+    }
+
+  
+
 }

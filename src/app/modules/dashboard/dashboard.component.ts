@@ -26,6 +26,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }) 
    }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }

@@ -1,18 +1,31 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatDividerModule, MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, MatListModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import {
+  MatDividerModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatListModule,
+  MatPaginatorModule,
+  MatTableModule,
+  MatSortModule,
+  MatInputModule,
+  MatFormFieldModule,
+} from "@angular/material";
 
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { AreaComponent } from './widgets/area/area.component';
-import { HighchartsChartModule } from 'highcharts-angular';
-import { CardComponent } from './widgets/card/card.component';
-import { PieComponent } from './widgets/pie/pie.component';
-import { ScaterplotComponent } from './widgets/scaterplot/scaterplot.component';
-import { StarplotComponent } from './widgets/starplot/starplot.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { RouterModule } from "@angular/router";
+
+import { HeaderComponent } from "./components/header/header.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { AreaComponent } from "./widgets/area/area.component";
+import { HighchartsChartModule } from "highcharts-angular";
+import { CardComponent } from "./widgets/card/card.component";
+import { PieComponent } from "./widgets/pie/pie.component";
+import { ScaterplotComponent } from "./widgets/scaterplot/scaterplot.component";
+import { StarplotComponent } from "./widgets/starplot/starplot.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +36,7 @@ import { StarplotComponent } from './widgets/starplot/starplot.component';
     CardComponent,
     PieComponent,
     ScaterplotComponent,
-    StarplotComponent
+    StarplotComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +48,14 @@ import { StarplotComponent } from './widgets/starplot/starplot.component';
     MatMenuModule,
     MatListModule,
     RouterModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSortModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   exports: [
     HeaderComponent,
@@ -45,7 +65,7 @@ import { StarplotComponent } from './widgets/starplot/starplot.component';
     CardComponent,
     PieComponent,
     ScaterplotComponent,
-    StarplotComponent
-  ]
+    StarplotComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
