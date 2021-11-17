@@ -5,7 +5,7 @@
 * Home Page - Multivariate Data
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample.png)
 
-* Home Page - Scater Plot
+* Home Page - Scatter Plot 
 ![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scater-plot.png)
 
 * About Us
@@ -55,14 +55,14 @@ We use `@Git` for versioning.
 
 ## Technology
 * [NodeJS](https://nodejs.org/en/ "NodeJS Home Page")
-* [D3](https://d3js.org/ "D3 Home Page")
+* [D3 JS](https://d3js.org/ "D3 JS Home Page")
 * [Angular ](https://angular.io/ "Angular Home Page")
 * [Angular Material](https://material.angular.io/ "Angular Material Home Page")
 * [Git-SCM](https://git-scm.com/ "Git Home Page")
 
 ## Developers
 
-* [Biswajit Debnath](https://www.linkedin.com/in/coderbd/ "Biswajit Debnath's LinkedIn Profile")
+* [Biswajit Debnath](https://www.linkedin.com/in/coderbd/ "Biswajit Debnath's LinkedIn Profile") - Full Stack Java Developer
 * [Hassan Abdullah](https://www.linkedin.com/in/coderbd/ "Hassan Abdullah's LinkedIn Profile")
 * [Paul S.](https://www.linkedin.com/in/coderbd/ "Paul S.'s LinkedIn Profile")
 
