@@ -17,10 +17,12 @@ export class ScaterplotComponent implements OnInit {
   
   private svg:any;
   private margin = 80;
+  private marginBottom = 120;
   private width = 1200 - (this.margin * 2);
   private height = 600 - (this.margin * 2);
   private xColName='Retail Price';
   private yColName='Horsepower(HP)';
+  private scatterPlotName='Car Dataset Visualization';
 
   constructor(private dashboardService: DashboardService) {
     this.dashboardService.getCSV().then(() => {
@@ -38,7 +40,7 @@ export class ScaterplotComponent implements OnInit {
     this.svg = d3.select("figure#scatter")
     .append("svg")
     .attr("width", this.width + (this.margin * 3))
-    .attr("height", this.height + (this.margin * 2))
+    .attr("height", this.height + (this.margin + this.marginBottom))
     .append("g")
     .attr("transform", "translate(" + this.margin + "," + this.margin + ")");
   }
@@ -89,13 +91,24 @@ export class ScaterplotComponent implements OnInit {
     .style("opacity", 0.7)
     .style("fill", (d)=>{return carTypeColors[d['Type']]});
 
+    const scatterPlotLabel = this.svg.append('g');
+
+    // add scatterplot name label
+    scatterPlotLabel.append("text")
+    .attr("transform",
+          "translate(" + (this.width/2) + " ," +
+                         (this.height + this.marginBottom - 10) + ")")
+    .attr("font-weight", "bold")
+    .style("text-anchor", "middle")
+    .text(this.scatterPlotName);
+
     const xLabel = this.svg.append('g');
 
     // add X axis labels
-    xLabel.append("text")             
+    xLabel.append("text")
     .attr("transform",
-          "translate(" + (this.width/2) + " ," + 
-                         (this.height + this.margin) + ")")
+          "translate(" + (this.width/2) + " ," +
+                         (this.height + this.margin - 30) + ")")
     .style("text-anchor", "middle")
     .text(this.xColName +(' (€)'));
 
