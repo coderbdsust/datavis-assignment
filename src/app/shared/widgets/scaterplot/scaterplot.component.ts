@@ -22,7 +22,7 @@ export class ScaterplotComponent implements OnInit {
   private height = 600 - (this.margin * 2);
   private xColName='Retail Price';
   private yColName='Horsepower(HP)';
-  private scatterPlotName='Car Dataset Visualization';
+  private scatterPlotName='Figure - Multivariate Data Visualization';
 
   constructor(private dashboardService: DashboardService) {
     this.dashboardService.getCSV().then(() => {
