@@ -54,6 +54,9 @@ export class ScaterplotComponent implements OnInit {
     let yAxisMin = this.dashboardService.getMin(this.carsJsonArray, this.yColName);
     let yAxisMax = this.dashboardService.getMax(this.carsJsonArray, this.yColName);
 
+    xAxisMax = this.roundAxisMaxValueUp(xAxisMax);
+    yAxisMax = this.roundAxisMaxValueUp(yAxisMax);
+
     // dynamic color creation for the type
     // let carTypeColors = this.dashboardService.getGetUniqueColors(this.carsJsonArray);
     
@@ -148,5 +151,23 @@ export class ScaterplotComponent implements OnInit {
               .style("fill", color);
 
       }
+  }
+
+  // rounds up the second significant digit if digits thereafter are non-zero
+  // can only round up values above 10.
+  // e.g.: 0.81->0.81(<10) , 9.01->9.01(<10), 10.01->11 , 100->100, 101->110, 463->470, 192465->200000
+  private roundAxisMaxValueUp(axisMax: number): number {
+    let i=0
+    let newAxisMax = axisMax;
+    for(; newAxisMax > 10. ; i++ ) {
+      newAxisMax /= 10.;
+    }
+    if(i > 0){
+      newAxisMax = Math.ceil((newAxisMax * 10));
+      for(;i > 1;i--){
+        newAxisMax *= 10;
+      }
+    }
+    return newAxisMax;
   }
 }
