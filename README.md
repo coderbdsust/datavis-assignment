@@ -6,7 +6,7 @@
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample.png)
 
 * Home Page - Scatter Plot 
-![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scater-plot.png)
+![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot.png)
 
 * About Us
 ![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus.png)
