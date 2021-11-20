@@ -63,8 +63,8 @@ We use `@Git` for versioning.
 ## Developers
 
 * [Biswajit Debnath](https://www.linkedin.com/in/coderbd/ "Biswajit Debnath's LinkedIn Profile") - Full Stack Java Developer
-* [Hassan Abdullah](https://www.linkedin.com/in/coderbd/ "Hassan Abdullah's LinkedIn Profile")
-* [Paul S.](https://www.linkedin.com/in/coderbd/ "Paul S.'s LinkedIn Profile")
+* [Hassan Abdullah](# "Hassan Abdullah's LinkedIn Profile")
+* [Paul S.](# "Paul S.'s LinkedIn Profile")
 
 ## License
 
