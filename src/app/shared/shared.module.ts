@@ -16,7 +16,6 @@ import {
 
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { RouterModule } from "@angular/router";
-
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
@@ -26,6 +25,7 @@ import { CardComponent } from "./widgets/card/card.component";
 import { PieComponent } from "./widgets/pie/pie.component";
 import { ScaterplotComponent } from "./widgets/scaterplot/scaterplot.component";
 import { StarplotComponent } from "./widgets/starplot/starplot.component";
+
 
 @NgModule({
   declarations: [
@@ -66,6 +66,6 @@ import { StarplotComponent } from "./widgets/starplot/starplot.component";
     PieComponent,
     ScaterplotComponent,
     StarplotComponent,
-  ],
+  ]
 })
 export class SharedModule {}

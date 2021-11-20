@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { DefaultComponent } from "./default.component";
 import { DashboardComponent } from "src/app/modules/dashboard/dashboard.component";
@@ -21,7 +21,11 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { DashboardService } from "src/app/modules/dashboard.service";
 import { Assignment3Component } from "src/app/modules/assignment3/assignment3.component";
 import { AboutusComponent } from "src/app/modules/aboutus/aboutus.component";
+import { PerfectScrollbarConfigInterface , PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: false
+};
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -44,9 +48,14 @@ import { AboutusComponent } from "src/app/modules/aboutus/aboutus.component";
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
-  
+    FormsModule,
+    PerfectScrollbarModule
   ],
-  providers: [DashboardService],
+  providers: [DashboardService,
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DefaultModule {}
