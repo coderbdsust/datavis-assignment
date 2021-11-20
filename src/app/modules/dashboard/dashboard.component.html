@@ -1,14 +1,11 @@
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
     <div fxFlex="100" class="mat-elevation-z8">
-        <div fxLayout="row" fxLayoutAlign="space-between"> 
-          
+      <div fxLayout="row" fxLayoutAlign="space-between"> 
           <mat-label  fxLayoutGap="10px"><h2>Multivariate Data Sample</h2></mat-label>
-
           <mat-form-field class="example-form-field" appearance="fill">
             <mat-label>Search</mat-label>
-
-            <input matInput type="text" [(ngModel)]="value" class="mat-table-input-search" (keyup)="applyFilter($event.target.value)">
-            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <input matInput type="text" [(ngModel)]="searchText" class="mat-table-input-search" (keyup)="applyFilter($event.target.value)">
+            <button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
               <mat-icon>close</mat-icon>
             </button>
           </mat-form-field>
@@ -36,7 +33,7 @@
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
       <mat-card fxFlex="100" class="mat-elevation-z8">
-        <app-scaterplot></app-scaterplot>
+          <app-scaterplot></app-scaterplot>
       </mat-card>
 </div>
 

@@ -1,7 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChildren} from "@angular/core";
 import * as d3 from "d3";
+import { fromEvent, Observable, Subscription } from "rxjs";
 import { DashboardService } from "src/app/modules/dashboard.service";
-import { Underscore } from "underscore";
+import { any, Underscore } from "underscore";
 
 declare var _: Underscore<any>;
 
@@ -10,10 +11,14 @@ declare var _: Underscore<any>;
   templateUrl: "./scaterplot.component.html",
   styleUrls: ["./scaterplot.component.scss"],
 })
-export class ScaterplotComponent implements OnInit {
+export class ScaterplotComponent implements OnInit, OnDestroy{
+  
+  @ViewChildren('Figure') Figure: any;
+  resizeObservable: Observable<Event>;
+  resizeSubscription: Subscription;
+
   carsJsonArray = [];
   carJsonColumnNames = [];
-
   private svg: any;
   private margin = 80;
   private marginBottom = 120;
@@ -23,14 +28,42 @@ export class ScaterplotComponent implements OnInit {
   private yColName = "Horsepower(HP)";
   private scatterPlotName = "Figure - Multivariate Data Visualization";
 
-  constructor(private dashboardService: DashboardService) {
+  constructor(private dashboardService: DashboardService) {}
+
+  ngOnInit() {
     this.dashboardService.getCSV().then(() => {
       this.carsJsonArray = this.dashboardService.carsJsonArray;
       this.carJsonColumnNames = this.carJsonColumnNames;
+      this.renderPlot();
     });
+
+    // Window Resizing Listener
+    // this.onWindowResizeSubscribe();
   }
 
-  ngOnInit() {
+  ngOnDestroy(){
+    if(this.resizeSubscription)
+      this.resizeSubscription.unsubscribe();
+  }
+
+  // Window Resiz Observable
+  onWindowResizeSubscribe()
+  {
+    this.resizeObservable = fromEvent(window, 'resize');
+    this.resizeSubscription = this.resizeObservable.subscribe(event => {
+      this.onResize(event);
+    })
+  }
+
+  onResize($event){
+    if(this.Figure && this.Figure.first && this.Figure.first.nativeElement){
+      let figureElm = this.Figure.first.nativeElement;
+      //this.height = figureElm.clientHeight;
+      //this.width = figureElm.clientWidth;
+    }
+  }
+
+  renderPlot(){
     this.createSvg();
     this.drawPlot();
   }
@@ -239,7 +272,7 @@ export class ScaterplotComponent implements OnInit {
     }
   }
 
-  // rounds up the second significant digit if digits thereafter are non-zero
+  // Rounds up the second significant digit if digits thereafter are non-zero
   // can only round up values above 10.
   // e.g.: 0.81->0.81(<10) , 9.01->9.01(<10), 10.01->11 , 100->100, 101->110, 463->470, 192465->200000
   private roundAxisMaxValueUp(axisMax: number): number {

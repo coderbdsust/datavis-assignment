@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 import { MatTableDataSource, MatPaginator , MatSort} from '@angular/material';
 
@@ -11,7 +11,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   displayedColumns=[];
   carsJsonArray=[];
-  dataSource: any;
+  dataSource= new MatTableDataSource<any>();
+  @Input() searchText:string;
 
   @ViewChild('matPaginator', { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;

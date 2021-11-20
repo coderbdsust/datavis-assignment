@@ -1,6 +1,6 @@
 # Data Visualization
 
-## Features Summary with UI
+## Features Summary with UI - [Live Demo](https://data-vis-ws2021-bhp.glitch.me/)
 
 * Home Page - Multivariate Data
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample.png)
@@ -29,7 +29,7 @@ Run `npm start` or `ng serve`  for a dev server. Navigate to `http://localhost:4
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Build For Production
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
