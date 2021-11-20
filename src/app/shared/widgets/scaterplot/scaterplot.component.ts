@@ -147,7 +147,7 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
 
     this.svg.append("g").call(d3.axisLeft(y));
 
-    const canvas = this.svg.append("g");
+    const canvas = this.svg;
 
     // Drawing Border Rectangle Shape - RWD
     canvas
@@ -157,8 +157,8 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
       .append("rect")
       .attr("x", (d) => x(d[this.xColName]))
       .attr("y", (d) => y(d[this.yColName]))
-      .attr("width", 12)
-      .attr("height", 12)
+      .attr("width", 8)
+      .attr("height", 8)
       .style("opacity", 0.7)
       .attr("fill", "none")
       .attr("stroke-width", "3px")
@@ -174,7 +174,7 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
     .append("circle")
     .attr("cx", (d) => x(d[this.xColName]))
     .attr("cy", (d) => y(d[this.yColName]))
-    .attr("r", 7)
+    .attr("r", 4)
     .style("opacity", 0.7)
     .attr("fill", "none")
     .attr("stroke-width", "3px")
@@ -190,8 +190,8 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
       .append("rect")
       .attr("x", (d) => x(d[this.xColName]))
       .attr("y", (d) => y(d[this.yColName]))
-      .attr("width", 12)
-      .attr("height", 12)
+      .attr("width", 8)
+      .attr("height", 8)
       .style("opacity", 0.7)
       .style("fill", (d) => {
         return carTypeColors[d["Type"]];
