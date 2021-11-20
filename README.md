@@ -3,13 +3,13 @@
 ## Features Summary with UI - [Live Demo](https://data-vis-ws2021-bhp.glitch.me/)
 
 * Home Page - Multivariate Data
-![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample.png)
+![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v1.png)
 
-* Home Page - Scatter Plot 
-![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot.png)
+* Home Page - Scatter Plot
+![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v1.png)
 
 * About Us
-![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus.png)
+![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus-v1.png)
 
 ## CLI
 
