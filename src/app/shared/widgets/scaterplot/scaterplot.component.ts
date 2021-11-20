@@ -123,6 +123,12 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
       Wagon: "#a196cf",
     };
 
+    let carWDShapes = {
+      AWD: "circle",
+      RWD: "rect",
+      FWD: "filled rect"
+    }
+
     const x = d3
       .scaleLinear()
       .domain([xAxisMin, xAxisMax])
@@ -153,7 +159,6 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
       .attr("y", (d) => y(d[this.yColName]))
       .attr("width", 12)
       .attr("height", 12)
-      .attr("stroke-width", 2)
       .style("opacity", 0.7)
       .attr("fill", "none")
       .attr("stroke-width", "3px")
@@ -243,7 +248,7 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
 
     let index = 0;
     let offset = 20;
-
+    // draw legend
     for (const oKey in carTypeColors) {
       let color = carTypeColors[oKey];
       index++;
@@ -256,7 +261,7 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
           "translate(" +
             (this.width + lastWidthAndLastMarginInBetween) +
             " ," +
-            (this.margin - index * offset) +
+            (200 - index * offset) +
             ")"
         )
         .style("text-anchor", "end")
@@ -265,10 +270,65 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
       d3Legend
         .append("circle")
         .attr("cx", this.width + lastWidthAndLastMarginInBetween + 15)
-        .attr("cy", this.margin - index * offset - 5)
+        .attr("cy", 200 - index * offset - 5)
         .attr("r", 6)
         .style("opacity", 0.7)
         .style("fill", color);
+    }
+    index += 1;
+    for (const oKey in carWDShapes) {
+      let shape = carWDShapes[oKey];
+      index++;
+
+      let lastWidthAndLastMarginInBetween = 100;
+      d3Legend
+        .append("text")
+        .attr(
+          "transform",
+          "translate(" +
+            (this.width + lastWidthAndLastMarginInBetween) +
+            " ," +
+            (200 - index * offset) +
+            ")"
+        )
+        .style("text-anchor", "end")
+        .text(oKey);
+
+      switch(shape) {
+      case "rect": {
+        d3Legend
+          .append("rect")
+          .attr("x", this.width + lastWidthAndLastMarginInBetween + 8)
+          .attr("y", 200 - index * offset - 12)
+          .attr("width", 12)
+          .attr("height", 12)
+          .attr("fill", "none")
+          .attr("stroke-width", "3px")
+          .attr("stroke","#222")
+        break;
+      }
+      case "filled rect": {
+        d3Legend
+          .append("rect")
+          .attr("x", this.width + lastWidthAndLastMarginInBetween + 8)
+          .attr("y", 200 - index * offset - 12)
+          .attr("width", 12)
+          .attr("height", 12)
+          .attr("fill", "#222")
+        break;
+      }
+      case "circle": {
+        d3Legend
+          .append("circle")
+          .attr("cx", this.width + lastWidthAndLastMarginInBetween + 15)
+          .attr("cy", 200 - index * offset - 5)
+          .attr("r", 6)
+          .attr("fill", "none")
+          .attr("stroke-width", "3px")
+          .attr("stroke","#222")
+        break;
+      }
+      }
     }
   }
 
