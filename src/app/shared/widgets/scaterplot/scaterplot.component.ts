@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit, ViewChildren} from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChildren } from "@angular/core";
 import * as d3 from "d3";
 import { fromEvent, Observable, Subscription } from "rxjs";
 import { DashboardService } from "src/app/modules/dashboard.service";
-import { any, Underscore } from "underscore";
+import { Underscore } from "underscore";
 
 declare var _: Underscore<any>;
 
@@ -11,11 +11,13 @@ declare var _: Underscore<any>;
   templateUrl: "./scaterplot.component.html",
   styleUrls: ["./scaterplot.component.scss"],
 })
-export class ScaterplotComponent implements OnInit, OnDestroy{
-  
-  @ViewChildren('Figure') Figure: any;
+export class ScaterplotComponent implements OnInit, OnDestroy {
+
+  // Unused Block-Start
+  @ViewChildren("Figure") Figure: any;
   resizeObservable: Observable<Event>;
   resizeSubscription: Subscription;
+  // Unused Block-End
 
   carsJsonArray = [];
   carJsonColumnNames = [];
@@ -41,29 +43,27 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
     // this.onWindowResizeSubscribe();
   }
 
-  ngOnDestroy(){
-    if(this.resizeSubscription)
-      this.resizeSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (this.resizeSubscription) this.resizeSubscription.unsubscribe();
   }
 
-  // Window Resiz Observable
-  onWindowResizeSubscribe()
-  {
-    this.resizeObservable = fromEvent(window, 'resize');
-    this.resizeSubscription = this.resizeObservable.subscribe(event => {
+  // Window Resize Observable - Not Used
+  onWindowResizeSubscribe() {
+    this.resizeObservable = fromEvent(window, "resize");
+    this.resizeSubscription = this.resizeObservable.subscribe((event) => {
       this.onResize(event);
-    })
+    });
   }
 
-  onResize($event){
-    if(this.Figure && this.Figure.first && this.Figure.first.nativeElement){
+  onResize($event) {
+    if (this.Figure && this.Figure.first && this.Figure.first.nativeElement) {
       let figureElm = this.Figure.first.nativeElement;
       //this.height = figureElm.clientHeight;
       //this.width = figureElm.clientWidth;
     }
   }
 
-  renderPlot(){
+  renderPlot() {
     this.createSvg();
     this.drawPlot();
   }
@@ -126,8 +126,8 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
     let carWDShapes = {
       AWD: "circle",
       RWD: "rect",
-      FWD: "filled rect"
-    }
+      FWD: "filled rect",
+    };
 
     const x = d3
       .scaleLinear()
@@ -168,21 +168,21 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
 
     // Drawing Circle Shape - AWD
     canvas
-    .selectAll("dot")
-    .data(circleArrays)
-    .enter()
-    .append("circle")
-    .attr("cx", (d) => x(d[this.xColName]))
-    .attr("cy", (d) => y(d[this.yColName]))
-    .attr("r", 4)
-    .style("opacity", 0.7)
-    .attr("fill", "none")
-    .attr("stroke-width", "3px")
-    .attr("stroke", (d) => {
-      return carTypeColors[d["Type"]];
-    });
+      .selectAll("dot")
+      .data(circleArrays)
+      .enter()
+      .append("circle")
+      .attr("cx", (d) => x(d[this.xColName]))
+      .attr("cy", (d) => y(d[this.yColName]))
+      .attr("r", 4)
+      .style("opacity", 0.7)
+      .attr("fill", "none")
+      .attr("stroke-width", "3px")
+      .attr("stroke", (d) => {
+        return carTypeColors[d["Type"]];
+      });
 
-    // Drawing Full Rectangle Shape - No AWD/RWD
+    // Drawing Full Rectangle Shape - FWD
     canvas
       .selectAll("dot")
       .data(blockRectArrays)
@@ -196,8 +196,6 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
       .style("fill", (d) => {
         return carTypeColors[d["Type"]];
       });
-
-   
 
     const scatterPlotLabel = this.svg.append("g");
 
@@ -254,6 +252,7 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
       index++;
 
       let lastWidthAndLastMarginInBetween = 100;
+
       d3Legend
         .append("text")
         .attr(
@@ -275,7 +274,9 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
         .style("opacity", 0.7)
         .style("fill", color);
     }
+    
     index += 1;
+
     for (const oKey in carWDShapes) {
       let shape = carWDShapes[oKey];
       index++;
@@ -294,40 +295,43 @@ export class ScaterplotComponent implements OnInit, OnDestroy{
         .style("text-anchor", "end")
         .text(oKey);
 
-      switch(shape) {
-      case "rect": {
-        d3Legend
-          .append("rect")
-          .attr("x", this.width + lastWidthAndLastMarginInBetween + 8)
-          .attr("y", 200 - index * offset - 12)
-          .attr("width", 12)
-          .attr("height", 12)
-          .attr("fill", "none")
-          .attr("stroke-width", "3px")
-          .attr("stroke","#222")
-        break;
-      }
-      case "filled rect": {
-        d3Legend
-          .append("rect")
-          .attr("x", this.width + lastWidthAndLastMarginInBetween + 8)
-          .attr("y", 200 - index * offset - 12)
-          .attr("width", 12)
-          .attr("height", 12)
-          .attr("fill", "#222")
-        break;
-      }
-      case "circle": {
-        d3Legend
-          .append("circle")
-          .attr("cx", this.width + lastWidthAndLastMarginInBetween + 15)
-          .attr("cy", 200 - index * offset - 5)
-          .attr("r", 6)
-          .attr("fill", "none")
-          .attr("stroke-width", "3px")
-          .attr("stroke","#222")
-        break;
-      }
+      switch (shape) {
+        
+        case "rect": {
+          d3Legend
+            .append("rect")
+            .attr("x", this.width + lastWidthAndLastMarginInBetween + 8)
+            .attr("y", 200 - index * offset - 12)
+            .attr("width", 12)
+            .attr("height", 12)
+            .attr("fill", "none")
+            .attr("stroke-width", "3px")
+            .attr("stroke", "#222");
+          break;
+        }
+
+        case "filled rect": {
+          d3Legend
+            .append("rect")
+            .attr("x", this.width + lastWidthAndLastMarginInBetween + 8)
+            .attr("y", 200 - index * offset - 12)
+            .attr("width", 12)
+            .attr("height", 12)
+            .attr("fill", "#222");
+          break;
+        }
+
+        case "circle": {
+          d3Legend
+            .append("circle")
+            .attr("cx", this.width + lastWidthAndLastMarginInBetween + 15)
+            .attr("cy", 200 - index * offset - 5)
+            .attr("r", 6)
+            .attr("fill", "none")
+            .attr("stroke-width", "3px")
+            .attr("stroke", "#222");
+          break;
+        }
       }
     }
   }
