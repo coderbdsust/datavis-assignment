@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {
   MatDividerModule,
@@ -14,6 +14,7 @@ import {
   MatFormFieldModule,
 } from "@angular/material";
 
+import {FormsModule} from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { RouterModule } from "@angular/router";
 import { HeaderComponent } from "./components/header/header.component";
@@ -25,7 +26,13 @@ import { CardComponent } from "./widgets/card/card.component";
 import { PieComponent } from "./widgets/pie/pie.component";
 import { ScaterplotComponent } from "./widgets/scaterplot/scaterplot.component";
 import { StarplotComponent } from "./widgets/starplot/starplot.component";
+import { ForceDirectedPlotComponent } from './widgets/force-directed-plot/force-directed-plot.component';
+import { MultivariateDataComponent } from './widgets/multivariate-data/multivariate-data.component';
+import { PerfectScrollbarConfigInterface , PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: false
+};
 
 @NgModule({
   declarations: [
@@ -37,6 +44,8 @@ import { StarplotComponent } from "./widgets/starplot/starplot.component";
     PieComponent,
     ScaterplotComponent,
     StarplotComponent,
+    ForceDirectedPlotComponent,
+    MultivariateDataComponent,
   ],
   imports: [
     CommonModule,
@@ -55,7 +64,8 @@ import { StarplotComponent } from "./widgets/starplot/starplot.component";
     MatIconModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,
@@ -66,6 +76,14 @@ import { StarplotComponent } from "./widgets/starplot/starplot.component";
     PieComponent,
     ScaterplotComponent,
     StarplotComponent,
-  ]
+    MultivariateDataComponent,
+    ForceDirectedPlotComponent
+
+  ],
+  providers: [{
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule {}

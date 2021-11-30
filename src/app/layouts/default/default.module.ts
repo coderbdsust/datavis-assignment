@@ -18,10 +18,11 @@ import {
 } from "@angular/material";
 import {FormsModule} from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { DashboardService } from "src/app/modules/dashboard.service";
+import { DashboardService } from "src/app/modules/dashboard/dashboard.service";
 import { Assignment3Component } from "src/app/modules/assignment3/assignment3.component";
 import { AboutusComponent } from "src/app/modules/aboutus/aboutus.component";
 import { PerfectScrollbarConfigInterface , PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
+import { Assignment3Service } from "src/app/modules/assignment3/assignment3.service";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: false
@@ -51,7 +52,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule,
     PerfectScrollbarModule
   ],
-  providers: [DashboardService,
+  providers: [DashboardService, Assignment3Service,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

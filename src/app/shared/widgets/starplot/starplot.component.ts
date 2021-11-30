@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardService } from 'src/app/modules/dashboard.service';
+import { DashboardService } from 'src/app/modules/dashboard/dashboard.service';
 import * as d3 from "d3";
 
 @Component({

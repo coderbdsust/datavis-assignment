@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChildren } from "@angular/core";
 import * as d3 from "d3";
 import { fromEvent, Observable, Subscription } from "rxjs";
-import { DashboardService } from "src/app/modules/dashboard.service";
+import { DashboardService } from "src/app/modules/dashboard/dashboard.service";
 import { Underscore } from "underscore";
 
 declare var _: Underscore<any>;
