@@ -10,11 +10,11 @@ export class Assignment3Service {
   flightPromise: any;
   airportsPromise: any;
 
-  flightColNames = [];
-  flightJsonArrays = [];
+  public flightColNames = [];
+  public flightJsonArrays = [];
 
-  airportsColNames = [];
-  airportsJsonArrays = [];
+  public airportsColNames = [];
+  public airportsJsonArrays = [];
 
   constructor(private http: HttpClient, private commonService: CommonService) {}
 
@@ -40,7 +40,7 @@ export class Assignment3Service {
 
   getAirportsCSV() {
     if (!this.airportsPromise) {
-      this.flightPromise = new Promise((resolve, reject) => {
+      this.airportsPromise = new Promise((resolve, reject) => {
         this.http
           .get("/assets/airports.csv", { responseType: "text" })
           .subscribe(

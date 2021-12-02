@@ -14,10 +14,15 @@ export class CommonService {
     for(var i=1;i<lines.length;i++){
         var obj = {};
         var currentline=lines[i].split(",");
+        let notEmptyCount=0;
         for(var j=0;j<headers.length;j++){
-            obj[headers[j]] = currentline[j];
+          let word = currentline[j];
+          if(!word || word.trim()=='') notEmptyCount++; // Removing empty line
+          obj[headers[j]] = currentline[j];
         }
-        jsonArray.push(obj);
+
+        if(notEmptyCount!=headers.length)
+          jsonArray.push(obj);
     }
     return jsonArray;
   }

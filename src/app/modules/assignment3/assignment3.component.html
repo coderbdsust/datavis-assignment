@@ -1,5 +1,21 @@
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
-    <mat-card fxFlex="100" class="mat-elevation-z8">
-        <app-force-directed-plot></app-force-directed-plot>
-    </mat-card>
+<div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="10px" class="stats-cards">
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
+        <mat-card fxFlex="60" class="mat-elevation-z8">
+            <app-multivariate-data [displayDataArrays]="airportsArrays" [displayColNames]="airportsCols" [tableTitle]="'Airports Data'">
+            </app-multivariate-data>
+        </mat-card>
+
+        <mat-card fxFlex="40" class="mat-elevation-z8">
+            <app-multivariate-data [displayDataArrays]="flightsArrays" [displayColNames]="flightCols" [tableTitle]="'Flights Data'">
+            </app-multivariate-data>
+        </mat-card>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
+        <mat-card fxFlex="100" class="mat-elevation-z8">
+            <app-force-directed-plot></app-force-directed-plot>
+        </mat-card>
+    </div>
+
 </div>
