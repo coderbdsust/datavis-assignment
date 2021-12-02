@@ -29,6 +29,7 @@ import { StarplotComponent } from "./widgets/starplot/starplot.component";
 import { ForceDirectedPlotComponent } from './widgets/force-directed-plot/force-directed-plot.component';
 import { MultivariateDataComponent } from './widgets/multivariate-data/multivariate-data.component';
 import { PerfectScrollbarConfigInterface , PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
+import { CommonService } from "./common-service/common.service";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: false
@@ -80,7 +81,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ForceDirectedPlotComponent
 
   ],
-  providers: [{
+  providers: [
+    CommonService,
+    {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     }],

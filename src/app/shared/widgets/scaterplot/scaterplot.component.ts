@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import { fromEvent, Observable, Subscription } from "rxjs";
 import { DashboardService } from "src/app/modules/dashboard/dashboard.service";
 import { Underscore } from "underscore";
+import { CommonService } from "../../common-service/common.service";
 
 declare var _: Underscore<any>;
 
@@ -30,7 +31,7 @@ export class ScaterplotComponent implements OnInit, OnDestroy {
   private yColName = "Horsepower(HP)";
   private scatterPlotName = "Figure - Multivariate Data Visualization";
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService, private commonService: CommonService) {}
 
   ngOnInit() {
     this.dashboardService.getCSV().then(() => {
@@ -81,20 +82,20 @@ export class ScaterplotComponent implements OnInit, OnDestroy {
 
   // Drawing the graph in the area
   private drawPlot(): void {
-    let xAxisMin = this.dashboardService.getMin(
+    let xAxisMin = this.commonService.getMin(
       this.carsJsonArray,
       this.xColName
     );
-    let xAxisMax = this.dashboardService.getMax(
+    let xAxisMax = this.commonService.getMax(
       this.carsJsonArray,
       this.xColName
     );
 
-    let yAxisMin = this.dashboardService.getMin(
+    let yAxisMin = this.commonService.getMin(
       this.carsJsonArray,
       this.yColName
     );
-    let yAxisMax = this.dashboardService.getMax(
+    let yAxisMax = this.commonService.getMax(
       this.carsJsonArray,
       this.yColName
     );
