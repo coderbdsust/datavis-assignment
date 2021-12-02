@@ -44,5 +44,15 @@ export class CommonService {
     }
     return minValue;
   }
+  
+  public getGetUniqueColors(carArr){
+    let colors={};
+    carArr.forEach(car => {
+      if(!colors[car['Type']]){
+          colors[car['Type']]= '#'+Math.floor(Math.random()*16777215).toString(16);
+      }
+    })
+    return colors;
+  }
 
 }

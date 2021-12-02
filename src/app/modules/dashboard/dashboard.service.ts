@@ -11,7 +11,6 @@ export class DashboardService{
   readCsvPromise: any;
 
   constructor(private http: HttpClient, private commonService: CommonService) {}
-
     getCSV(){
       if(!this.readCsvPromise){
         this.readCsvPromise = new Promise((resolve, reject) => {
@@ -26,17 +25,4 @@ export class DashboardService{
       };
       return this.readCsvPromise;
     }
-
-  public getGetUniqueColors(carArr){
-      let colors={};
-      carArr.forEach(car => {
-        if(!colors[car['Type']]){
-            colors[car['Type']]= '#'+Math.floor(Math.random()*16777215).toString(16);
-        }
-      })
-      return colors;
-    }
-
-  
-
 }

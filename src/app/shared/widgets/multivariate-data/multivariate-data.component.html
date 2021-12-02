@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign="space-between"> 
-    <mat-label  fxLayoutGap="10px"><h2>Multivariate Data Sample</h2></mat-label>
+    <mat-label  fxLayoutGap="10px"><h2>{{tableTitle}}</h2></mat-label>
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label>Search</mat-label>
       <input matInput type="text" [(ngModel)]="searchText" class="mat-table-input-search" (keyup)="applyFilter($event.target.value)">

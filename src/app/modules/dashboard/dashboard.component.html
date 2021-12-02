@@ -1,6 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
     <div fxFlex="100" class="mat-elevation-z8">
-        <app-multivariate-data></app-multivariate-data>
+        <app-multivariate-data [displayDataArrays]="multiDataArray" [displayColNames]="multiDataCols" [tableTitle]="multiTableTitle">
+        </app-multivariate-data>
       </div>
 </div>
 

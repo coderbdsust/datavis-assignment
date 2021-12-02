@@ -1,5 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/core';
-import { DashboardService } from '../../../modules/dashboard/dashboard.service';
+import { Component, OnInit, ViewChild, Input, OnChanges } from '@angular/core';
 import { MatTableDataSource, MatPaginator , MatSort} from '@angular/material';
 
 @Component({
@@ -7,25 +6,29 @@ import { MatTableDataSource, MatPaginator , MatSort} from '@angular/material';
   templateUrl: './multivariate-data.component.html',
   styleUrls: ['./multivariate-data.component.scss']
 })
-export class MultivariateDataComponent implements OnInit {
+export class MultivariateDataComponent implements OnInit, OnChanges {
 
-  displayedColumns=[];
-  carsJsonArray=[];
-  dataSource= new MatTableDataSource<any>();
+  
+  // Receiving attributes data from parent component - start
+  @Input("tableTitle")
+  public tableTitle = "Multivariate Data Sample";
+
+  @Input("displayColNames")
+  public displayedColumns=[];
+
+  @Input("displayDataArrays")
+  public dataJsonArray=[];
+  // Receiving attributes data from parent component - End
+
   @Input() searchText:string;
-
+  
+  dataSource= new MatTableDataSource<any>();
+  
   @ViewChild('matPaginator', { static: true }) paginator: MatPaginator;
+  
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private dashboardService: DashboardService) {
-    this.dashboardService.getCSV().then(() => {
-      this.displayedColumns=this.dashboardService.carJsonColumnNames;
-      this.carsJsonArray=this.dashboardService.carsJsonArray;
-      this.dataSource = new MatTableDataSource<any>(this.dashboardService.carsJsonArray);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort=this.sort;
-    }) 
-   }
+  constructor() {}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -35,8 +38,17 @@ export class MultivariateDataComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
   
-  ngOnInit() {
+  ngOnInit() {}
+
+  initializeMaterialTable(){
+    this.dataSource.data = this.dataJsonArray;
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort=this.sort;
   }
 
+  // When @Input() params get the values successfully, than re-render the material table
+  ngOnChanges(changes: any) {
+    this.initializeMaterialTable();
+  }
 
 }

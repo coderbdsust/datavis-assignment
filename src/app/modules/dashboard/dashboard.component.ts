@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,19 @@ import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/cor
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() {}
+  //Sendable Attributes to Child Component  - Start
+  public multiDataArray = [];
+  public multiDataCols = [];
+  public multiTableTitle="Multivariate Data Sample";
+  //Sendable Attributes to Child Component  - End
 
-  ngOnInit() {
+  constructor(private dashboardService:DashboardService) {
+    this.dashboardService.getCSV().then(() => {
+      this.multiDataCols = this.dashboardService.carJsonColumnNames;
+      this.multiDataArray = this.dashboardService.carsJsonArray;
+    }); 
   }
+
+  ngOnInit() {}
 
 }
