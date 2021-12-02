@@ -30,6 +30,7 @@ import { ForceDirectedPlotComponent } from './widgets/force-directed-plot/force-
 import { MultivariateDataComponent } from './widgets/multivariate-data/multivariate-data.component';
 import { PerfectScrollbarConfigInterface , PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
 import { CommonService } from "./common-service/common.service";
+import { HeatmapComponent } from './widgets/heatmap/heatmap.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: false
@@ -47,6 +48,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     StarplotComponent,
     ForceDirectedPlotComponent,
     MultivariateDataComponent,
+    HeatmapComponent,
   ],
   imports: [
     CommonModule,
@@ -79,8 +81,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ScaterplotComponent,
     StarplotComponent,
     MultivariateDataComponent,
-    ForceDirectedPlotComponent
-
+    ForceDirectedPlotComponent,
+    HeatmapComponent
   ],
   providers: [
     CommonService,
