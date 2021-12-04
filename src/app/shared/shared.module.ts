@@ -12,6 +12,8 @@ import {
   MatSortModule,
   MatInputModule,
   MatFormFieldModule,
+  MatDialogModule,
+  MAT_DIALOG_DEFAULT_OPTIONS
 } from "@angular/material";
 
 import {FormsModule} from "@angular/forms";
@@ -31,6 +33,7 @@ import { MultivariateDataComponent } from './widgets/multivariate-data/multivari
 import { PerfectScrollbarConfigInterface , PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG} from 'ngx-perfect-scrollbar';
 import { CommonService } from "./common-service/common.service";
 import { HeatmapComponent } from './widgets/heatmap/heatmap.component';
+import { DialogDataViewerComponent } from './widgets/dialog-data-viewer/dialog-data-viewer.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: false
@@ -49,6 +52,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ForceDirectedPlotComponent,
     MultivariateDataComponent,
     HeatmapComponent,
+    DialogDataViewerComponent,
   ],
   imports: [
     CommonModule,
@@ -69,7 +73,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    MatDialogModule,
+    MatDividerModule
   ],
   exports: [
     HeaderComponent,
@@ -82,14 +88,17 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     StarplotComponent,
     MultivariateDataComponent,
     ForceDirectedPlotComponent,
-    HeatmapComponent
+    HeatmapComponent,
+    DialogDataViewerComponent
   ],
   providers: [
     CommonService,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     }],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents: [DialogDataViewerComponent]
 })
 export class SharedModule {}

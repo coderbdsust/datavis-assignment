@@ -19,15 +19,11 @@ export class Assignment3Component implements OnInit {
   ngOnInit() {
     
     this.a3Service.getFlightCSV().then(()=>{
-      console.log('Flight Cols: '+this.a3Service.flightColNames.length);
-      console.log(this.a3Service.flightJsonArrays.length);
       this.flightsArrays=this.a3Service.flightJsonArrays;
       this.flightCols=this.a3Service.flightColNames;
     });
 
     this.a3Service.getAirportsCSV().then(()=>{
-      console.log("Airport Cols: "+this.a3Service.airportsColNames.length);
-      console.log(this.a3Service.airportsJsonArrays.length);
       this.airportsArrays=this.a3Service.airportsJsonArrays;
       this.airportsCols=this.a3Service.airportsColNames;
     });

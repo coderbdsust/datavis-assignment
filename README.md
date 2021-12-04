@@ -5,11 +5,17 @@
 This project is done under an assignment of a course named Data Visualization - Winter Semester 2021 in Technical University of Dresden
 ## Features Summary with UI - [Live Demo](https://data-vis-ws2021-bhp.glitch.me/)
 
+* Multivariate Data Visualization
+![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-assignment-2.gif)
+
 * Home Page - Multivariate Data
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v1.png)
 
 * Home Page - Scatter Plot
 ![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v1.png)
+
+* Home Page - Scatter Plot - Selected Point Details
+![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v2.png)
 
 * About Us
 ![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus-v1.png)
