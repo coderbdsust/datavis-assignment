@@ -15,6 +15,10 @@ const routes: Routes = [
         component: DashboardComponent, // Assignment 2 Body Content
       },
       {
+        path: "assignment2",
+        component: DashboardComponent, // Assignment 2 Body Content
+      },
+      {
         path: "assignment3", // Assignment 2 Body Content
         component: Assignment3Component,
       },
