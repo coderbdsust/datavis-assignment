@@ -22,6 +22,11 @@
     "@angular/platform-browser": "~8.0.1",
     "@angular/platform-browser-dynamic": "~8.0.1",
     "@angular/router": "~8.0.1",
+    "@types/d3-array": "^3.0.2",
+    "@types/d3-delaunay": "^6.0.0",
+    "@types/geojson": "^7946.0.8",
+    "@types/topojson": "^3.2.3",
+    "@types/topojson-specification": "^1.0.2",
     "angular-datatables": "^12.0.1",
     "d3": "^7.1.1",
     "d3-dispatch": "^3.0.1",
@@ -36,8 +41,10 @@
     "jquery": "^3.4.1",
     "ngx-perfect-scrollbar": "^8.0.0",
     "rxjs": "~6.4.0",
+    "topojson-client": "^3.1.0",
     "tslib": "^1.9.0",
     "underscore": "^1.13.1",
+    "world-atlas": "^2.0.2",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {

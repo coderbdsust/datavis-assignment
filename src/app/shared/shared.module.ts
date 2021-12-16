@@ -13,6 +13,7 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatDialogModule,
+  MatTooltipModule,
   MAT_DIALOG_DEFAULT_OPTIONS
 } from "@angular/material";
 
@@ -75,7 +76,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule,
     PerfectScrollbarModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTooltipModule
   ],
   exports: [
     HeaderComponent,

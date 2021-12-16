@@ -1,14 +1,14 @@
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
     <div fxFlex="100" class="mat-elevation-z8">
-        <app-multivariate-data [displayDataArrays]="multiDataArray" [displayColNames]="multiDataCols" [tableTitle]="multiTableTitle">
-        </app-multivariate-data>
-      </div>
+      <app-multivariate-data [displayDataArrays]="multiDataArray" [displayColNames]="multiDataCols" [tableTitle]="multiTableTitle">
+      </app-multivariate-data>
+    </div>
 </div>
 
 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
-      <mat-card fxFlex="100" class="mat-elevation-z8">
-        <perfect-scrollbar style="overflow: hidden;">
-            <app-scaterplot></app-scaterplot>
-        </perfect-scrollbar>
-      </mat-card>
+    <div fxFlex="100" class="mat-elevation-z8">
+      <perfect-scrollbar style="overflow: hidden;">
+         <app-scaterplot></app-scaterplot>
+      </perfect-scrollbar>
+    </div>
 </div>

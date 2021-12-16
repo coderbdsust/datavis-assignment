@@ -9,12 +9,15 @@ export class Assignment3Service {
   
   flightPromise: any;
   airportsPromise: any;
+  usStatePromise: any;
 
   public flightColNames = [];
   public flightJsonArrays = [];
 
-  public airportsColNames = [];
-  public airportsJsonArrays = [];
+  public airportColNames = [];
+  public airportJsonArrays = [];
+
+  public usStateJson: any;
 
   constructor(private http: HttpClient, private commonService: CommonService) {}
 
@@ -38,15 +41,15 @@ export class Assignment3Service {
     return this.flightPromise;
   }
 
-  getAirportsCSV() {
+  getAirportCSV() {
     if (!this.airportsPromise) {
       this.airportsPromise = new Promise((resolve, reject) => {
         this.http
           .get("/assets/airports.csv", { responseType: "text" })
           .subscribe(
             (data: any) => {
-              this.airportsJsonArrays = this.commonService.CsvToJSON(data);
-              this.airportsColNames = Object.keys(this.airportsJsonArrays[0]);
+              this.airportJsonArrays = this.commonService.CsvToJSON(data);
+              this.airportColNames = Object.keys(this.airportJsonArrays[0]);
               resolve(null);
             },
             (error) => {
@@ -56,5 +59,24 @@ export class Assignment3Service {
       });
     }
     return this.airportsPromise;
+  }
+
+  getUsState10m() {
+    if (!this.usStatePromise) {
+      this.usStatePromise = new Promise((resolve, reject) => {
+        this.http
+          .get("/assets/states-10m.json", { responseType: "json" })
+          .subscribe(
+            (data: any) => {
+              this.usStateJson = data;
+              resolve(null);
+            },
+            (error) => {
+              reject(error);
+            }
+          );
+      });
+    }
+    return this.usStatePromise;
   }
 }

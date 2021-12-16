@@ -19,22 +19,19 @@ export class ForceDirectedPlotComponent implements OnInit {
   constructor(private a3Service:Assignment3Service) { }
 
   ngOnInit() {
-    this.a3Service.getFlightCSV().then(()=>{
-      
+
+    this.a3Service.getFlightCSV().then(()=>{  
       this.flightJsonArrays=this.a3Service.flightJsonArrays;
       this.flightColNames=this.a3Service.flightColNames;
-      
       console.log('Flight Json Len: '+this.flightJsonArrays.length);
       console.log('Flight Cols Len: '+this.flightColNames.length);
-
-      this.createSVG();
-      this.drawPlot();
-
+     // this.createSVG();
+      //this.drawPlot();
     });
   }
 
 
-  private createSVG(): void {
+  private createSVG() : void {
     this.svg = d3
       .select("figure#force-directed-graph")
       .append("svg")
@@ -42,8 +39,6 @@ export class ForceDirectedPlotComponent implements OnInit {
       .attr("height",this.height + this.margin*2)
   }
 
-  private drawPlot():void{
-
-  }
+  private drawPlot() : void{}
 
 }

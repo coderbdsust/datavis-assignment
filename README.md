@@ -8,14 +8,17 @@ This project is done under an assignment of a course named Data Visualization - 
 * Multivariate Data Visualization
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-assignment-2.gif)
 
-* Home Page - Multivariate Data
+* Home Page / Assignment 2 - Multivariate Data
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v1.png)
 
-* Home Page - Scatter Plot
+* Home Page / Assignment 2 - Scatter Plot
 ![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v1.png)
 
-* Home Page - Scatter Plot - Selected Point Details
+* Home Page / Assignment 2 - Scatter Plot - Selected Point Details
 ![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v2.png)
+
+* Assingment 3 - Interactive Visualization
+![Heatmap Layout](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/heatmap-plot-v1.png)
 
 * About Us
 ![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus-v1.png)

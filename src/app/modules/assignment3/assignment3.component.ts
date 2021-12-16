@@ -8,10 +8,10 @@ import { Assignment3Service } from './assignment3.service';
 })
 export class Assignment3Component implements OnInit {
 
-  public airportsArrays=[];
-  public airportsCols=[];
+  public airportArrays=[];
+  public airportCols=[];
 
-  public flightsArrays=[]
+  public flightArrays=[]
   public flightCols=[];
 
   constructor(private a3Service:Assignment3Service) {}
@@ -19,13 +19,13 @@ export class Assignment3Component implements OnInit {
   ngOnInit() {
     
     this.a3Service.getFlightCSV().then(()=>{
-      this.flightsArrays=this.a3Service.flightJsonArrays;
+      this.flightArrays=this.a3Service.flightJsonArrays;
       this.flightCols=this.a3Service.flightColNames;
     });
 
-    this.a3Service.getAirportsCSV().then(()=>{
-      this.airportsArrays=this.a3Service.airportsJsonArrays;
-      this.airportsCols=this.a3Service.airportsColNames;
+    this.a3Service.getAirportCSV().then(()=>{
+      this.airportArrays=this.a3Service.airportJsonArrays;
+      this.airportCols=this.a3Service.airportColNames;
     });
   }
 

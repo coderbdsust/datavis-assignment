@@ -1,0 +1,17 @@
+.state {
+    stroke: white;
+    stroke-width: px;
+    stroke-opacity: 0.6;
+}
+
+.state:hover {
+    fill: lightgreen;
+    stroke: darkred;
+}
+
+.heatmap {
+    margin-top: 15px;
+    box-shadow: inset 0 0 1em gold, 0 0 1em red;
+}
+
+.svg-heatmap{}

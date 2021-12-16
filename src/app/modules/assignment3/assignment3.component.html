@@ -1,25 +1,20 @@
-<div fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="10px" class="stats-cards">
-    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
-        <mat-card fxFlex="40" class="mat-elevation-z8">
-            <app-multivariate-data [displayDataArrays]="flightsArrays" [displayColNames]="flightCols" [tableTitle]="'Flights Data'">
-            </app-multivariate-data>
-        </mat-card>
-        <mat-card fxFlex="60" class="mat-elevation-z8">
-            <app-multivariate-data [displayDataArrays]="airportsArrays" [displayColNames]="airportsCols" [tableTitle]="'Airports Data'">
-            </app-multivariate-data>
-        </mat-card>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
+    <div fxFlex="40" class="mat-elevation-z8">
+        <app-multivariate-data [displayDataArrays]="flightArrays" [displayColNames]="flightCols"
+            [tableTitle]="'Flights Data'">
+        </app-multivariate-data>
     </div>
-    
-    <!-- <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="stats-cards">
-        <mat-card fxFlex="50" class="mat-elevation-z8">
-            <perfect-scrollbar style="overflow: hidden;">
-                <app-force-directed-plot></app-force-directed-plot>
-             </perfect-scrollbar>
-        </mat-card>
-        <mat-card fxFlex="50" class="mat-elevation-z8">
-            <perfect-scrollbar style="overflow: hidden;">
-                <app-heatmap></app-heatmap>
-            </perfect-scrollbar>
-        </mat-card>
-    </div> -->
+    <div fxFlex="60" class="mat-elevation-z8">
+        <app-multivariate-data [displayDataArrays]="airportArrays" [displayColNames]="airportCols"
+            [tableTitle]="'Airports Data'">
+        </app-multivariate-data>
+    </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px" class="stats-cards">
+    <div fxFlex="70" class="mat-elevation-z8">
+        <perfect-scrollbar style="overflow: hidden;">
+            <app-heatmap></app-heatmap>
+        </perfect-scrollbar>
+    </div>
 </div>
