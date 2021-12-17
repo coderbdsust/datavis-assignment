@@ -5,8 +5,8 @@
 This project is done under an assignment of a course named Data Visualization - Winter Semester 2021 in Technical University of Dresden
 ## Features Summary with UI - [Live Demo](https://data-vis-ws2021-bhp.glitch.me/)
 
-* Multivariate Data Visualization
-![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-v4.gif)
+* Data Visualization
+![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-v5.gif)
 
 * Home Page / Assignment 2 - Multivariate Data
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v2.png)
