@@ -6,7 +6,7 @@ This project is done under an assignment of a course named Data Visualization - 
 ## Features Summary with UI - [Live Demo](https://data-vis-ws2021-bhp.glitch.me/)
 
 * Multivariate Data Visualization
-![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-v3.gif)
+![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-v4.gif)
 
 * Home Page / Assignment 2 - Multivariate Data
 ![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v2.png)
