@@ -6,22 +6,22 @@ This project is done under an assignment of a course named Data Visualization - 
 ## Features Summary with UI - [Live Demo](https://data-vis-ws2021-bhp.glitch.me/)
 
 * Multivariate Data Visualization
-![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-assignment-2.gif)
+![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-v3.gif)
 
 * Home Page / Assignment 2 - Multivariate Data
-![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v1.png)
+![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v2.png)
 
 * Home Page / Assignment 2 - Scatter Plot
-![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v1.png)
+![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v1.1.png)
 
 * Home Page / Assignment 2 - Scatter Plot - Selected Point Details
-![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v2.png)
+![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v2.1.png)
 
 * Assingment 3 - Interactive Visualization
-![Heatmap Layout](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/heatmap-plot-v1.png)
+![Heatmap Layout](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/heatmap-plot-v2.png)
 
 * About Us
-![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus-v1.png)
+![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus-v2.png)
 
 ## CLI
 
@@ -70,6 +70,7 @@ We use `@Git` for versioning.
 * [D3 JS](https://d3js.org/ "D3 JS Home Page")
 * [Angular ](https://angular.io/ "Angular Home Page")
 * [Angular Material](https://material.angular.io/ "Angular Material Home Page")
+* [TopoJSON](https://github.com/topojson/topojson "TopoJSON Github Page")
 * [Git-SCM](https://git-scm.com/ "Git Home Page")
 
 ## Developers

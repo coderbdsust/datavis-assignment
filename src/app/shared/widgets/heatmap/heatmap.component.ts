@@ -13,7 +13,7 @@ export class HeatmapComponent implements OnInit {
   private svg: any;
   private margin = 80;
   private marginBottom = 120;
-  private width = 1200 - this.margin;
+  private width = 1100 - this.margin;
   private height = 600 - this.margin * 2;
   private plotName =
     "Figure - Interactive Visualization on Heatmap Based Layout";
@@ -80,8 +80,8 @@ export class HeatmapComponent implements OnInit {
       .attr("class", "tooltip")
       .style("background-color", "white")
       .style("border", "solid")
+      .style("color","gray")
       .style("border-width", "2px")
-      .style("border-radius", "5px")
       .style("padding", "5px");
 
     // Drawing the USA map
@@ -93,8 +93,20 @@ export class HeatmapComponent implements OnInit {
       .attr("stroke", "white")
       .attr("stroke-width", "3px")
       .attr("d", pathGenerator)
-      .attr("fill", "rgba(211,211,211,0.9)");
+      .attr("fill", "rgba(211,211,211,0.9)")
+      .on("mouseover", function (event, d)  {
+        try{
+          let state = d3.select(this);
+          state.attr("fill", "rgba(144,238,144,1)");
 
+        }catch(err){}
+      }).on("mouseleave", function (event, d) {
+        try{
+          let state = d3.select(this);
+          state.attr("fill", "rgba(211,211,211,0.9)");
+        }catch(err){}
+      });
+      
     // Drawing the circle in the USA Map
     g.selectAll("path")
       .data(this.airportsData)
@@ -114,20 +126,31 @@ export class HeatmapComponent implements OnInit {
       })
       .style("opacity", 0.5)
       .style("fill", "red")
-      .on("mouseover", (event, d) => {
-        Tooltip.style("opacity", 1);
-        g.select(this).style("stroke", "black").style("opacity", 1);
-      })
       .on("mousemove", (event, d) => {
-        Tooltip.html("Airport: " + d.iata)
-          .style("left", d3.pointer(event, g.node())[0] + 75 + "px")
-          .style("top", d3.pointer(event, g.node())[1] + 125 + "px");
-      })
-      .on("mouseleave", (event, d) => {
-        Tooltip.style("opacity", 0);
-        g.select(this).style("stroke", "none").style("opacity", 0.5);
-      });
+        Tooltip.html(`Airport - ${d.iata}, Name - ${d.name}, City - ${d.city}, State - ${d.state}`);
 
+      })
+      .on("mouseover", function (event, d)  {
+        Tooltip.style("opacity", 1);
+        try{
+          let circle = d3.select(this);
+          circle
+            .style("opacity", 0.7)
+            .style("stroke","black")
+            .style("stroke-width","3px")
+
+        }catch(err){}
+      }).on("mouseleave", function (event, d) {
+        Tooltip.style("opacity", 0);
+        try{
+          let circle = d3.select(this);
+          circle
+            .style("opacity", 0.5)
+            .style("stroke","none")
+            .style("stroke-width","0px")
+        }catch(err){}
+      });
+      
     // Labeling Plot
     g.append("text")
       .attr(

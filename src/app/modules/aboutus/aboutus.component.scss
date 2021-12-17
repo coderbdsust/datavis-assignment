@@ -1,50 +1,12 @@
 .about-card-container{
   margin-top: 60px !important;
+  margin-bottom: 30px !important;
 }
 
-.example-card {
-    max-width: 400px;
-    margin: 12px;
+.about-card-container > *{
+  margin: 8px;
 }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
 
-  section {
-    display: table;
-  }
-  
-  .example-label {
-    display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
-    min-width: 120px;
-  }
-  
-  .example-button-row {
-    display: table-cell;
-    width: 490px;
-  }
-  
-  .example-button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
-  }
-  
-  .example-flex-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .example-button-container {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-  }
-
-  
 .rounded-profile-image {
     border-radius: 50%;
     height: 300px;
