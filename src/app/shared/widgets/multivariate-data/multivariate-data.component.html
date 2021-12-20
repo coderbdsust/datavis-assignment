@@ -3,9 +3,6 @@
     <mat-form-field class="example-form-field" appearance="fill">
       <mat-label>Search</mat-label>
       <input matInput type="text" [(ngModel)]="searchText" class="mat-table-input-search" (keyup)="applyFilter($event.target.value)">
-      <button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
-        <mat-icon>close</mat-icon>
-      </button>
     </mat-form-field>
 </div>
 
