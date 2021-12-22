@@ -2,20 +2,31 @@
   <h4 mat-dialog-title>Details Info</h4>
   <button mat-icon-button mat-dialog-close color="warn"><mat-icon>close</mat-icon></button>
 </div>
+
 <div mat-dialog-content>
-  <mat-list>
-    <mat-list-item>Car Name - {{ data.Name }}</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Type - {{ data.Type }}</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>AWD - {{ data.AWD }}</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>RWD - {{ data.RWD }}</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Retail Price - {{ data["Retail Price"] }}</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Dealer Cost - {{ data["Dealer Cost"] }}</mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>Engine Size - {{ data["Engine Size (l)"] }}</mat-list-item>
-  </mat-list>
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    
+    <div fxFlex="35">
+      <mat-list>
+        <mat-list-item>Car Name - {{ data.Name }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Type - {{ data.Type }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>AWD - {{ data.AWD }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>RWD - {{ data.RWD }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Retail Price - {{ data["Retail Price"] }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Dealer Cost - {{ data["Dealer Cost"] }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Engine Size - {{ data["Engine Size (l)"] }}</mat-list-item>
+      </mat-list>
+    </div>
+
+    <div fxFlex="65">
+        <app-starplot></app-starplot>
+    </div>
+</div>
+
 </div>
