@@ -6,22 +6,22 @@ This project is done under an assignment of a course named Data Visualization - 
 ## Features Summary with UI - [Live Demo](https://data-vis-ws2021-bhp.glitch.me/)
 
 * Data Visualization
-![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/data-vis-v5.gif)
+![Multivariate Data](/demo-img/data-vis-v5.gif)
 
 * Home Page / Assignment 2 - Multivariate Data
-![Multivariate Data](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/mvd-sample-v2.png)
+![Multivariate Data](/demo-img/mvd-sample-v2.png)
 
 * Home Page / Assignment 2 - Scatter Plot
-![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v1.1.png)
+![Scater Plot](/demo-img/scatter-plot-v1.1.png)
 
 * Home Page / Assignment 2 - Scatter Plot - Selected Point Details
-![Scater Plot](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/scatter-plot-v2.1.png)
+![Scater Plot](/demo-img/scatter-plot-v2.1.png)
 
 * Assingment 3 - Interactive Visualization
-![Heatmap Layout](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/heatmap-plot-v2.png)
+![Heatmap Layout](/demo-img/heatmap-plot-v2.png)
 
 * About Us
-![About Us](https://github.com/coderbdsust/datavis-assignment/blob/master/demo-img/aboutus-v2.png)
+![About Us](/demo-img/aboutus-v2.png)
 
 ## CLI
 
